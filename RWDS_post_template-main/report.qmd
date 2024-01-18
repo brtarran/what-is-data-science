@@ -133,8 +133,6 @@ The eigen centrality of each occupation is displayed in Figure 3. Each point rep
 #|   to measure the similarity of each occupation in terms of its role relative to other occupations. 
 #|   We find that in terms of the role a data scientist serves relative to other occupations, however, data science and statistics occupy nearly identical positions.
 
-# caption is incomplete
-
 library("igraph")
 library("ggrepel")
 

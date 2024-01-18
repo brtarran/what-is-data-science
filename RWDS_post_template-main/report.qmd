@@ -162,10 +162,14 @@ tibble(label = str_replace(names(soc_eigen_centrality$vector), ", All Other", ""
   ggplot() +
   aes(degree, growth / 100, label = label) +
   geom_point() +
-  geom_text_repel(max.overlaps = 7) +
+  geom_text_repel(max.overlaps = 6) +
   labs(x = "centrality (2020)", ) +
   scale_y_continuous(name = "predicted percent growth (2022 - 2032)",
-                     labels = scales::percent)
+                     labels = scales::percent,
+                     limits = c(0, .5),
+                     expand = c(0, 0)) +
+  scale_x_continuous(limits = c(-.01, 1.01),
+                     expand = c(0, 0))
 ```
 
 But this role may be changing. Figure 4 shows the centrality (x-axis) of each occupation (y-axis) in 2010 and 2020. Green bars denote increases from 2010 to 2020 while yellow bars denote decreases. We find that while statisticians and data scientists may serve nearly identical roles today, the centrality of statisticians has declined over the past decade relative to other occupations. In contrast, the centrality of data scientists has grown, now surpassing statisticians as the most central fast-growing occupation. We conclude that though a data scientist and a statistician serve similar roles today, those roles may change as the workforce changes. Note that the occupation classifications changed in 2018, and we used the [crosswalk](https://www.bls.gov/soc/2018/crosswalks_used_by_agencies.htm) provided by the US Bureau of Labor Statistics to make these comparisons. 

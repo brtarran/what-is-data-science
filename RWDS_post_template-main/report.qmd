@@ -159,7 +159,7 @@ tibble(label = str_replace(names(soc_eigen_centrality$vector), ", All Other", ""
   ggplot() +
   aes(degree, growth / 100, label = label) +
   geom_point() +
-  geom_text_repel(max.overlaps = 6) +
+  geom_text_repel(max.overlaps = 7) +
   labs(x = "centrality (2020)", ) +
   scale_y_continuous(name = "predicted percent growth (2022 - 2032)",
                      labels = scales::percent,

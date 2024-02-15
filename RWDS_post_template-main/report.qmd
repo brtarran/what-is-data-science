@@ -1,11 +1,12 @@
 ---
-title: What is data science?
+title: What is data science? A closer look at science’s latest priority dispute
 description: |
-  A closer look at science’s latest priority dispute.
+  Two popular data science algorithms -- naïve Bayes and eigen centrality -- are used to examine the difference between 'data scientists' and 'statisticians,' and to see where each role sits in the network of other occupations.
 categories:
-  - Data science
-  - Naïve Bayes
-  - Eigen centrality
+  - Algorithms
+  - Data science education
+  - Skills
+  - Training
 author: Jonathan Auerbach, David Kepplinger, and Nicholas Rios
 date: last-modified
 date-format: long
@@ -32,13 +33,13 @@ page-layout: article
 title-block-banner: true
 ---
 
-What is data science, and where did it come from? Is data science a new and exciting set of skills, necessary for analyzing 21st century data? Or is it a rebranding of statistics, which has carefully developed time-honored methods for data analysis over the past century? 
+What is data science, and where did it come from? Is data science a new and exciting set of skills, necessary for analyzing 21st century data? Or is it (as some have claimed) a rebranding of statistics, which has carefully developed time-honored methods for data analysis over the past century? 
 
 Priority disputes -- disagreements over who deserves credit for a new scientific theory or method -- date back to the beginning of science. Famous examples include the invention of [calculus](https://en.wikipedia.org/wiki/Leibniz–Newton_calculus_controversy) and [ordinary least squares](https://projecteuclid.org/journals/annals-of-statistics/volume-9/issue-3/Gauss-and-the-Invention-of-Least-Squares/10.1214/aos/1176345451.full). But this latest dispute calls into question the novelty of an entire discipline. 
 
 In this article, we use two popular data science algorithms to examine the difference between data science, statistics, and other occupations. We find that in terms of the preparation required to become a data scientist, data science reflects both the work of natural sciences managers -- individuals who oversee research operations in the natural sciences -- and statisticians and mathematicians. This suggests that data science is a shared enterprise among science and math, and thus those trained in the natural sciences have as much claim to data science as those trained in mathematics and statistics. 
 
-In terms of the role a data scientist serves relative to other occupations, however, we find that data science is essentially statistics. Both occupations are fast growing and central among the occupations that work with data. But while statistics and data science may serve nearly identical roles today, the centrality of statistics has declined over the past decade relative to other occupations. In contrast, the centrality of data science has grown, now surpassing statistics as the most central fast-growing occupation. 
+In terms of the role a data scientist serves relative to other occupations, however, we find that data science and statistics are similarly positioned. Both occupations are fast growing and central among the occupations that work with data. But the centrality of statistics has declined over the past decade relative to other occupations. In contrast, the centrality of data science has grown, now surpassing statistics as the most central fast-growing occupation. 
 
 ## We examine the role of data science using data science 
 
@@ -130,7 +131,7 @@ The eigen centrality of each occupation is displayed in @fig-centrality-growth. 
 #| fig-cap: >
 #|   We use [eigen centrality](https://en.wikipedia.org/wiki/Centrality#Eigenvector_centrality) (eigen decomposition) 
 #|   to measure the similarity of each occupation in terms of its role relative to other occupations. 
-#|   We find that in terms of the role a data scientist serves relative to other occupations, however, data science and statistics occupy nearly identical positions.
+#|   We find that in terms of the role a data scientist serves relative to other occupations, data science and statistics occupy nearly identical positions.
 
 library("igraph")
 library("ggrepel")
@@ -251,7 +252,7 @@ tibble(`2010 SOC Code` = soccode_2010,
         legend.position = "none")
 ```
 
-The findings in this section are based on the adjacency matrix that encodes whether an instructional program (row) is associated with an occupation (column). A more detailed summary of the matrix is provided in @fig-interactive-plot, which depicts the matrix as a network graph. Larger nodes represent occupations that are fast growing, while nodes closer to the center of the network represent more central occupations. The figure is interactive. You can zoom in to see the similar positions between data science and statistics, which are both large (fast growing) and central.
+The findings in this section are based on the adjacency matrix that encodes whether an instructional program (row) is associated with an occupation (column). A more detailed summary of the matrix is provided in @fig-interactive-plot, which depicts the matrix as a network graph. Larger nodes represent occupations that are fast growing, while nodes closer to the center of the network represent more central occupations. The figure is interactive. You can zoom in to see the similar positions between data scientists and statisticians, which are both large (fast growing) and central.
 
 ```{r}
 #| label: interactive-plot-setup
@@ -424,8 +425,8 @@ plot_color <- plot_data %>%
 #|  A visualization of the network of occupations in which occupations are
 #|  placed according to their closeness determined by instructional programs that train students
 #|  to work in multiple fields. 
-#|  We find that in terms of the role a data scientist serves relative to other occupations,  
-#|  however, data science and statistics occupy nearly identical positions.
+#|  We find that in terms of the role a data scientist serves relative to other occupations,
+#|  data science and statistics occupy nearly identical positions.
 #|  Occupations are colored according to the mix of primary occupation groups
 #|  connected to them through their degrees in common.
 #| fig-width: 8
@@ -499,9 +500,10 @@ int_plot <- layout(int_plot,
                                   size = 12)
                    ))
 int_plot
-# uncomment next line for publication purposes - save interactive plot as seperate html file, embed as iframe
-# 
-# htmlwidgets::saveWidget(as_widget(int_plot), "index.html")
+# uncomment next line for publication purposes - save interactive plot 
+# as separate html file, embed as iframe
+
+htmlwidgets::saveWidget(as_widget(int_plot), "index.html")
 ```
 
 
@@ -509,9 +511,9 @@ int_plot
 
 We conclude that individuals trained in managing natural sciences research -- a slow growing occupation -- are turning to data science -- a much faster growing occupation, and one which currently serves a role like that of a statistician. But if present trends continue, data science is poised to eclipse the historic role of the statistician as central to the occupations that work with data.  
 
-This suggests that while data science may be new and exciting, the role served by the data scientist is not particularly new. This does not mean that data scientists necessarily use the same time-honored methods for data analysis as statisticians. It is the authors’ experience, however, that many data science tools are in fact statistical. Indeed, the two data science algorithms we used in this article are both taught to students as new and exciting, but in reality, are centuries-old methods steeped in statistical history. 
+This suggests that while data science may be new and exciting, the role served by the data scientist is not particularly new. This does not mean that data scientists necessarily use the same time-honored methods for data analysis as statisticians. It is the authors’ experience, however, that many data science tools are in fact statistical. Indeed, the two data science algorithms we used in this article are both taught to students as new and exciting, but in reality are centuries-old methods steeped in statistical history. 
 
-Regardless of whether data science is or is not statistics, the occupation data scientist has proven immensely popular, capturing a zeitgeist that has eluded statistics. This is best evidenced by the fact that data science -- and not statistics -- has been crowned the [sexiest](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century) job of the 21st century. But if statistics has not enjoyed the popularity of data science, perhaps the real question in need of answering is: What is statistics?
+Regardless of whether data science is or is not statistics, the occupation "data scientist" has proven immensely popular, capturing a zeitgeist that has eluded statistics. This is best evidenced by the fact that data science -- and not statistics -- has been crowned the [sexiest](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century) job of the 21st century. But if statistics has not enjoyed the popularity of data science, perhaps the real question in need of answering is: What is statistics?
 
 ::: {.article-btn}
 [Back to section homepage](url)
@@ -529,13 +531,13 @@ About the author
 Copyright and licence
 : &copy; 2023 Jonathan Auerbach, David Kepplinger, and Nicholas Rios
 
-<a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> <img style="height:22px!important;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a> Text, code, and figures are licensed under a Creative Commons Attribution 4.0 (CC BY 4.0) <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> International licence, except where otherwise noted</a>. Thumbnail photo credit and licence goes here.
+<a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> <img style="height:22px!important;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a> Text, code, and figures are licensed under a Creative Commons Attribution 4.0 (CC BY 4.0) <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"> International licence, except where otherwise noted</a>.
   
 :::
 
 ::: {.g-col-12 .g-col-md-6}
 How to cite
-: Auerbach, Jonathan, David Kepplinger, and Nicholas Rios. 2023. "What is data science? A closer look at science’s latest priority dispute." Real World Data Science, Month Day, Year. [URL](url)
+: Auerbach, Jonathan, David Kepplinger, and Nicholas Rios. 2023. "What is data science? A closer look at science’s latest priority dispute." Real World Data Science, February 19, 2024. [URL](https://realworlddatascience.net/ideas/posts/2024/02/19/what-is-data-science.html)
 :::
 :::
 :::

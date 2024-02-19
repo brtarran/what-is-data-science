@@ -31,6 +31,9 @@ execute:
 nocite: '@*'
 page-layout: article
 title-block-banner: true
+knitr:
+  opts_chunk:
+    fig.path: images/
 ---
 
 What is data science, and where did it come from? Is data science a new and exciting set of skills, necessary for analyzing 21st century data? Or is it (as some have claimed) a rebranding of statistics, which has carefully developed time-honored methods for data analysis over the past century? 
@@ -505,7 +508,7 @@ int_plot
 # uncomment next line for publication purposes - save interactive plot 
 # as separate html file, embed as iframe
 
-htmlwidgets::saveWidget(as_widget(int_plot), "index.html")
+htmlwidgets::saveWidget(as_widget(int_plot), "network.html")
 ```
 
 
